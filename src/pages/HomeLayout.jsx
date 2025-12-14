@@ -4,7 +4,7 @@ const HomeLayout = () => {
 	const isPageLoading = navigation.state === 'loading'
 	return (
 		<>
-			
+			ww
 		</>
 	)
 }
