@@ -1,10 +1,21 @@
 import { Outlet, useNavigation } from 'react-router'
+import { Header, Navbar, Loading } from '../components'
 const HomeLayout = () => {
 	const navigation = useNavigation()
 	const isPageLoading = navigation.state === 'loading'
 	return (
 		<>
-			ww
+			<Header />
+			<Navbar />
+			{
+				isPageLoading ? (
+					<Loading />
+				) : (
+					<section className='py-20'>
+						<Outlet />
+					</section>
+				)
+			}
 		</>
 	)
 }
