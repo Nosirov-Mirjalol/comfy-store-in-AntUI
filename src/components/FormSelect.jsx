@@ -1,30 +1,20 @@
-import React from 'react';
-import { Select } from 'antd';
-const onChange = value => {
-  console.log(`selected ${value}`);
-};
-const onSearch = value => {
-  console.log('search:', value);
-};
-const App = () => (
-  <Select
-    showSearch={{ optionFilterProp: 'label', onSearch }}
-    placeholder="Select a person"
-    onChange={onChange}
-    options={[
-      {
-        value: 'jack',
-        label: 'Jack',
-      },
-      {
-        value: 'lucy',
-        label: 'Lucy',
-      },
-      {
-        value: 'tom',
-        label: 'Tom',
-      },
-    ]}
-  />
-);
-export default App;
+const FormSelect = ({ label, name, list, defaultValue, size }) => {
+	return (
+		<div className='form-control'>
+			<label htmlFor={name} className='label'>
+				<span className='label-text capitalize'>{label}</span>
+			</label>
+			<select name={name} id={name} defaultValue={defaultValue} className={`select select-bordered mt-2 ${size}`}>
+				{
+					list.map((item) => {
+						return (
+							<option value={item} key={item}>{item}</option>
+						)
+					})
+				}
+			</select>
+		</div>
+	)
+}
+
+export default FormSelect

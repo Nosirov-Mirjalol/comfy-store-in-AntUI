@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
-import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
-import { Slider } from 'antd';
-const IconSlider = props => {
-  const { max, min } = props;
-  const [value, setValue] = useState(0);
-  const mid = Number(((max - min) / 2).toFixed(5));
-  const preColorCls = value >= mid ? '' : 'icon-wrapper-active';
-  const nextColorCls = value >= mid ? 'icon-wrapper-active' : '';
+import { useState } from "react";
+import { formatPrice } from "../utils";
+
+const FormRange = ({ label, name, size }) => {
+  const step = 1000;
+  const maxPrice = 100000;
+  const [selectedPrice, setSelectedPrice] = useState(maxPrice);
   return (
-    <div className="icon-wrapper">
-      <FrownOutlined className={preColorCls} />
-      <Slider {...props} onChange={setValue} value={value} />
-      <SmileOutlined className={nextColorCls} />
+    <div className="form-control">
+      <label htmlFor={name} className="flex justify-between">
+        <span className="label-text capitalize">{label}</span>
+        <span>{formatPrice(selectedPrice)}</span>
+      </label>
+      <input
+        name={name}
+        type="range"
+        className={`range range-secondary ${size}`}
+        step={step}
+        min={0}
+        max={maxPrice}
+        value={selectedPrice}
+        onChange={(e) => setSelectedPrice(e.target.value)}
+      />
+      <div className="w-full flex justify-between text-xs px-2 mt-2">
+        <span>0</span>
+        <span>max : {formatPrice(maxPrice)}</span>
+      </div>
     </div>
   );
 };
-const App = () => <IconSlider min={0} max={20} />;
-export default App;
+
+export default FormRange;

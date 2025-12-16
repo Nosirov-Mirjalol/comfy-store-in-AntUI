@@ -1,6 +1,11 @@
 import { redirect, useLoaderData } from 'react-router'
 import { toast } from 'sonner'
 import { customFetch } from '../utils'
+import {
+	OrdersList,
+	ComplexPaginationContainer,
+	SectionTitle,
+} from '../components'
 
 const ordersQuery = (params, user) => {
 	return {
@@ -55,7 +60,9 @@ const Orders = () => {
 	}
 	return (
 		<>
-			
+			<SectionTitle text='Your Orders' />
+			<OrdersList />
+			<ComplexPaginationContainer />
 		</>
 	)
 }

@@ -1,9 +1,9 @@
-import axios from 'axios'
+import axios, { Axios } from "axios";
 
 const productionUrl = 'https://strapi-store-server.onrender.com/api'
 
-export const customFetch = axios.create({
-	baseURL: productionUrl,
+export const customFetch=axios.create({
+    baseURL:productionUrl
 })
 
 export const formatPrice = (price) => {

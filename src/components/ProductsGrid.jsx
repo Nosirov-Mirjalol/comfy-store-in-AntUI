@@ -1,10 +1,28 @@
+import { Link, useLoaderData } from 'react-router'
+import { formatPrice } from '../utils'
 
-function ProductsGrid() {
-  return (
-    <div>
-      
-    </div>
-  )
+const ProductsGrid = () => {
+	const { products } = useLoaderData()	
+
+	return (
+		<div className='pt-12 p-3 lg:p-1 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+			{
+				products.map((product) => {
+					const { title, price, image } = product.attributes
+					const dollars = formatPrice(price)
+					return <Link key={product.id} to={`/products/${product.id}`} className='card lg:w-[350px] w-full shadow-xl hover:shadow-2xl transition duration-300'>
+						<figure>
+							<img src={image} alt={title} className='rounded-xl h-64 md:h-48 w-full object-cover' />
+						</figure>
+						<div className='card-body items-center text-center'>
+							<h2 className='card-title capitalize tracking-wider'>{title}</h2>
+							<span className='text-secondary'>{dollars}</span>
+						</div>
+					</Link>
+				})
+			}
+		</div>
+	)
 }
 
 export default ProductsGrid
