@@ -4,17 +4,17 @@ import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import {useSelector} from 'react-redux'
+import { Button } from "antd";
 
 const Navbar = () => {
   const numItemInCart = useSelector((state) => state.cartState.numItemsInCart)
-  
   return (
     <nav className="bg-base-200 mb-20">
       <div className="navbar align-element">
         <div className="hidden lg:block lg:navbar-start">
-          <Link to={"/"} className="btn btn-primary text-2xl">
-            C
-          </Link>
+          <Button popover="">
+            <Link to={'/'}>C</Link>
+          </Button>
         </div>
         <div className="navbar-start lg:hidden">
           <details className="dropdown">
