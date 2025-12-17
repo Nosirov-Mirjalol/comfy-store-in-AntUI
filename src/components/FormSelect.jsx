@@ -1,20 +1,19 @@
-const FormSelect = ({ label, name, list, defaultValue, size }) => {
-	return (
-		<div className='form-control'>
-			<label htmlFor={name} className='label'>
-				<span className='label-text capitalize'>{label}</span>
-			</label>
-			<select name={name} id={name} defaultValue={defaultValue} className={`select select-bordered mt-2 ${size}`}>
-				{
-					list.map((item) => {
-						return (
-							<option value={item} key={item}>{item}</option>
-						)
-					})
-				}
-			</select>
-		</div>
-	)
-}
+import { Flex, Select } from "antd";
 
-export default FormSelect
+const FormSelect = ({ label, name, list, defaultValue }) => {
+  return (
+    <Flex className="flex-col gap-2">
+      <label htmlFor={name} className="label">
+        <span className=" capitalize">{label}</span>
+      </label>
+        <Select
+		  name={name}
+          defaultValue={defaultValue}
+          style={{ width: "100%" ,backgroundColor: 'rgba(0, 0, 0, 0.2)',color:"white"}}
+          options={list.map(item => ({ value: item, label: item }))}
+        />
+    </Flex>
+  );
+};
+
+export default FormSelect;

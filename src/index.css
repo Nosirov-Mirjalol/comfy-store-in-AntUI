@@ -12,3 +12,22 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.custom-btn {
+    background-color: #000075;
+    color: white;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-2px);
+}
+
+.custom-btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}

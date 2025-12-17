@@ -5,7 +5,7 @@ const ThemeController = ({ lightIcon, darkIcon }) => {
   const { theme, toggleTheme } = useTheme();
 
   const heroBtnStyle = {
-    backgroundColor: "#2563eb",
+    backgroundColor: "#000075",
     color: "#ffffff",
     border: "none",
     borderRadius: "50%",
