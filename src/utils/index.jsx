@@ -1,4 +1,5 @@
 import axios, { Axios } from "axios";
+import { useEffect, useState } from 'react';
 
 const productionUrl = 'https://strapi-store-server.onrender.com/api'
 
@@ -20,3 +21,27 @@ export const generateAmountOptions = (number) => {
 		return <option key={amount} value={amount}>{amount}</option>
 	})
 }
+
+export const useTheme = () => {
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('theme') || 'light'
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    // Barcha eski theme classlarini olib tashlash
+    root.classList.remove('light', 'dark');
+
+    // Yangi theme class qo'shish
+    root.classList.add(theme);
+
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  return { theme, toggleTheme };
+};
