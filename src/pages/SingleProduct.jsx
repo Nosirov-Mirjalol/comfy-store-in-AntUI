@@ -22,6 +22,7 @@ export const loader =
   };
 
 const SingleProduct = () => {
+  const theme=localStorage.getItem("theme")
   const { product } = useLoaderData();
   const { image, colors, company, description, price, title } =
     product.attributes;
@@ -59,8 +60,8 @@ const SingleProduct = () => {
       <Breadcrumb
         style={{ marginBottom: 24 }}
         items={[
-          { title: <Link className="!text-white" to="/">Home</Link> },
-          { title: <Link className="!text-white" to="/products">Products</Link> },
+          { title: <Link className={theme==="dark"&&"!text-white"} to="/">Home</Link> },
+          { title: <Link className={theme==="dark"&&"!text-white"} to="/products">Products</Link> },
         ]}
       />
 
