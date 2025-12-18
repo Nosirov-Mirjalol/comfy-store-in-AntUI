@@ -51,7 +51,7 @@ const Filter = () => {
         <Checkbox style={{ color: "white" }}></Checkbox>
       </Flex>
       {/* Buttons */}
-      <Button type="submit" className="custom-btn rounded-lg">
+      <Button typeof="submit" className="custom-btn rounded-lg">
         SEARCH
       </Button>
       <Link to={"/products"} className="rounded-lg">

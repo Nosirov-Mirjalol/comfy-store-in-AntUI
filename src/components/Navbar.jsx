@@ -1,4 +1,4 @@
-import Navlinks from "./Navlinks";
+import Navlinks, { links } from "./Navlinks";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -18,7 +18,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className=" lg:hidden">
-          <Dropdown menu={Navlinks} placement="bottom">
+          <Dropdown menu={{}}  placement="bottom">
             <Button>bottom</Button>
           </Dropdown>
         </div>

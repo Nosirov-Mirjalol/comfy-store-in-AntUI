@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
-
-const Navlinks = () => {
-  const links = [
+export const links = [
     {
       id: 1,
       title: "Home",
@@ -33,6 +31,8 @@ const Navlinks = () => {
       url: "/orders",
     },
   ];
+const Navlinks = () => {
+  
   return links.map((item) => {
     const { id, title, url } = item;
     return (
