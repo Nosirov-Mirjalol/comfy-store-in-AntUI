@@ -1,8 +1,7 @@
 import { Form, Link, useLoaderData } from "react-router";
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
-import FormCheckbox from "./FormCheckbox";
-import { Button, Checkbox, Flex, Slider } from "antd";
+import { Button, Checkbox, Flex, Input, Slider } from "antd";
 import { useState } from "react";
 
 const Filter = () => {
@@ -13,12 +12,10 @@ const Filter = () => {
 
   return (
     <Form className="bg-base-200 rounded-md px-8 py-4 grid gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center">
-      <FormInput
-        name={"search"}
-        label={"Search Product"}
-        type={"search"}
-        size={"input-sm"}
-      />
+      <Form className="flex flex-col gap-2">
+      <label className="text-gray-400">Search Product</label>
+      <Input className="ant-input tw-input" style={{backgroundColor:"rgba(0,0,0,0.2)"}} />
+      </Form>
       <FormSelect
         defaultValue={category}
         label="Select Category"
@@ -45,9 +42,10 @@ const Filter = () => {
           <p>$ 1000</p>
         </Flex>
       </div>
-      <div>
-        <Checkbox style={{color:"white"}}>Free Shipping</Checkbox>
-      </div>
+      <Flex className="flex-col justify-center items-center">
+        <p className="text-sm pb-1">Free Shipping</p>
+        <Checkbox style={{color:"white"}}></Checkbox>
+      </Flex>
       {/* Buttons */}
       <Button type="submit" className="custom-btn rounded-lg">
         SEARCH

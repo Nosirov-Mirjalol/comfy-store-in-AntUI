@@ -31,3 +31,6 @@ body {
     transform: translateY(1px);
     box-shadow: none;
 }
+.tw-input .ant-input::placeholder {
+  @apply text-gray-400 text-sm;
+}
