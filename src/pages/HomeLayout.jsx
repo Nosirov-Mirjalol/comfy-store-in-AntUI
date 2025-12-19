@@ -1,5 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import { Header, Navbar } from "../components/index";
+import { Spin } from "antd";
 
 const HomeLayout = () => {
   const navigate = useNavigation();
@@ -10,7 +11,7 @@ const HomeLayout = () => {
       <Navbar />
       {isLoading ? (
         <div className="h-screen flex items-center justify-center">
-          <span className="loading loading-ring loading-xl mb-10"></span>
+          <Spin size="large" />
         </div>
       ) : (
         <div className="align-element">

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { CheckoutForm, SectionTitle, CartTotals } from '../components';
 import { toast } from 'sonner';
 import { redirect } from 'react-router-dom';
+import { Flex } from 'antd';
 
 export const loader = (store) => () => {
   const user = store.getState().userState.user;
@@ -22,7 +23,7 @@ const Checkout = () => {
   return (
     <>
       <SectionTitle text='place your order' />
-      <div className='mt-8 grid gap-4 md:grid-cols-2 items-start'>
+      <div className='mt-8 grid gap-10 md:grid-cols-2 items-start'>
         <CheckoutForm />
         <CartTotals />
       </div>
