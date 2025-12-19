@@ -1,42 +1,66 @@
 import day from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import { useLoaderData } from 'react-router'
+import { Table } from 'antd'
+import './orders-table.css'
+
 day.extend(advancedFormat)
+
 const OrdersList = () => {
 	const { orders, meta } = useLoaderData()
+
+	const columns = [
+		{ title: 'Name', dataIndex: 'name' },
+		{ title: 'Address', dataIndex: 'address' },
+		{
+			title: 'Products',
+			dataIndex: 'numItemsInCart',
+			align: 'center',
+		},
+		{
+			title: 'Cost',
+			dataIndex: 'orderTotal',
+			render: (val) => <span className='price'>{val}</span>,
+		},
+		{
+			title: 'Date',
+			dataIndex: 'date',
+			className: 'date-col',
+		},
+	]
+
+	const dataSource = orders.map((order) => {
+		const { id } = order
+		const {
+			name,
+			address,
+			numItemsInCart,
+			orderTotal,
+			createdAt,
+		} = order.attributes
+
+		return {
+			key: id,
+			name,
+			address,
+			numItemsInCart,
+			orderTotal,
+			date: day(createdAt).format('hh:mm a - MMM D, YYYY'),
+		}
+	})
+
 	return (
-		<div className='mt-8'>
-			<h4 className='mb-4 capitalize'>total orders:{meta.pagination.total}</h4>
-			<div className="overflow-x-auto">
-				<table className='table table-zebra'>
-					{/* head */}
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Address</th>
-							<th>Products</th>
-							<th>Cost</th>
-							<th className='hidden sm:block'>Date</th>
+		<div className='orders-wrapper'>
+			<h4 className='orders-title'>
+				Total Orders: {meta.pagination.total}
+			</h4>
 
-						</tr>
-					</thead>
-					<tbody>
-						{orders.map((order) => {
-							const id = order.id
-							const { name, address, numItemsInCart, orderTotal, createdAt } = order.attributes
-							const date = day(createdAt).format('hh:mm a- MM Do, YYYY')
-							return <tr key={id}>
-								<td>{name}</td>
-								<td>{address}</td>
-								<td>{numItemsInCart}</td>
-								<td>{orderTotal}</td>
-								<td className='hidden sm:block'>{date}</td>
-
-							</tr>
-						})}
-					</tbody>
-				</table>
-			</div>
+			<Table
+				className='orders-table'
+				columns={columns}
+				dataSource={dataSource}
+				pagination={false}
+			/>
 		</div>
 	)
 }

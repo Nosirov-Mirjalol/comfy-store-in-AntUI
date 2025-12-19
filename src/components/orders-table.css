@@ -1,0 +1,56 @@
+/* Wrapper */
+.orders-wrapper {
+	margin-top: 32px;
+}
+
+/* Title */
+.orders-title {
+	margin-bottom: 16px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #e5e7eb;
+}
+
+/* Table base */
+.orders-table .ant-table {
+	background-color: #0b1220;
+	color: #e5e7eb;
+}
+
+/* Header */
+.orders-table .ant-table-thead > tr > th {
+	background-color: #020617;
+	color: #94a3b8;
+	font-weight: 500;
+	border-bottom: 1px solid #1e293b;
+}
+
+/* Body cells */
+.orders-table .ant-table-tbody > tr > td {
+	background-color: #0b1220;
+	border-bottom: 1px solid #1e293b;
+	color: #e5e7eb;
+}
+
+/* Hover */
+.orders-table .ant-table-tbody > tr:hover > td {
+	background-color: #020617;
+}
+
+/* Price highlight */
+.orders-table .price {
+	color: #34d399;
+	font-weight: 500;
+}
+
+/* Hide date on small screens */
+@media (max-width: 640px) {
+	.orders-table .date-col {
+		display: none;
+	}
+}
+
+/* Remove AntD weird outlines */
+.orders-table .ant-table-cell::before {
+	display: none;
+}
