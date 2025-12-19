@@ -1,17 +1,28 @@
+import { Button, Spin } from 'antd'
 import { useNavigation } from 'react-router'
 
-const SubmitBtn = ({ text ,size}) => {
+const SubmitBtn = ({ text, size }) => {
 	const navigation = useNavigation()
 	const isSubmitting = navigation.state === 'submitting'
-	return (
 
-		<button className={`btn btn-primary btn-block ${size}`} type='submit' disabled={isSubmitting}>
-			{
-				isSubmitting ? <>
-					<span className='loading loading-spinner'>sending...</span>
-				</> : text || 'submit'
-			}
-		</button>
+	return (
+		<Button
+			type='primary'
+			htmlType='submit'
+			block
+			disabled={isSubmitting}
+			size={size === 'btn-xl' ? 'large' : 'middle'}
+			className='rounded-lg flex items-center justify-center gap-2'
+		>
+			{isSubmitting ? (
+				<>
+					<Spin size='small' />
+					<span style={{color:"white"}} className='pl-3'>sending...</span>
+				</>
+			) : (
+				text || 'submit'
+			)}
+		</Button>
 	)
 }
 

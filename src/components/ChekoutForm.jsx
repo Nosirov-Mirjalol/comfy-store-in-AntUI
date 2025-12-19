@@ -55,7 +55,7 @@ const CheckoutForm = () => {
       <FormInput label="first name" name="name" type="text" />
       <FormInput label="address" name="address" type="text" />
       <div className="mt-2">
-        <Submitbtn text="place your order" />
+        <Submitbtn size={"btn-xl"} text="place your order" />
       </div>
     </Form>
   );
