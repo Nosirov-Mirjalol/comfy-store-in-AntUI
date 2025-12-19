@@ -54,3 +54,6 @@
 .orders-table .ant-table-cell::before {
 	display: none;
 }
+.orders-table .ant-table-tbody > tr:hover > td {
+	background-color: #0a1120 !important; /* yoki body cell rangi bilan bir xil */
+}
