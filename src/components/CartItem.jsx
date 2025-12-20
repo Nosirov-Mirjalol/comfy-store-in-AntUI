@@ -1,6 +1,6 @@
 import { Select, Button } from 'antd'
 import { formatPrice, generateAmountOptions } from '../utils'
-import { removeItem, editItem } from '../Features/Cart/CartSlice'
+import { removeItem, editItem } from '../features/Cart/CartSlice'
 import { useDispatch } from 'react-redux'
 
 const CartItem = ({ cartItem }) => {
