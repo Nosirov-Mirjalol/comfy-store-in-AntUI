@@ -1,4 +1,4 @@
-import Navlinks, { links } from "../components/Navlinks";
+import Navlinks from "./Navlinks";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -13,11 +13,13 @@ const Navbar = () => {
       <div className="flex justify-between items-center align-element">
         <div className="hidden lg:block">
           <Link to={"/"}>
-            <Button className="!bg-blue-950 !border-0 !text-white !text-xl w-12 rounded-xl px-6 py-6 shadow-md hover:shadow-xl transition-all duration-300">C</Button>
+            <Button className="!bg-blue-950 !border-0 !text-white !text-xl w-12 rounded-xl px-6 py-6 shadow-md hover:shadow-xl transition-all duration-300">
+              C
+            </Button>
           </Link>
         </div>
         <div className=" lg:hidden">
-          <Dropdown menu={{}}  placement="bottom">
+          <Dropdown menu={{}} placement="bottom">
             <Button>bottom</Button>
           </Dropdown>
         </div>
