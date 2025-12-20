@@ -1,7 +1,6 @@
-import Navlinks, { links } from "./Navlinks";
+import Navlinks, { links } from "./navlinks";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Button, Dropdown, Flex } from "antd";
