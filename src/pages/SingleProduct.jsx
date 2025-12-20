@@ -2,7 +2,7 @@ import { useLoaderData, Link } from "react-router";
 import { customFetch, formatPrice, generateAmountOptions } from "../utils";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../Features/Cart/CartSlice";
+import { addItem } from "../features/cart/cartSlice";
 import { Breadcrumb, Card, Button, Select, Typography, Space } from "antd";
 
 const { Title, Text, Paragraph } = Typography;
