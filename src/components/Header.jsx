@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
-import { clearCart } from '../features/Cart/CartSlice'
+import { clearCart } from '../features/cart/cartSlice'
 import { logoutUser } from '../features/user/userSlice'
 import { Button, Flex } from 'antd'
 import { useQueryClient } from '@tanstack/react-query'
