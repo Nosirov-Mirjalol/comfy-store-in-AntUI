@@ -1,4 +1,4 @@
-import Navlinks, { links } from "./navlinks";
+import Navlinks, { links } from "../components/Navlinks";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
