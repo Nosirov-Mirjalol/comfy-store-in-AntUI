@@ -1,4 +1,4 @@
-import Navlinks from "./Navlinks";
+import NavLinks from "./NavLinks";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:navbar-center lg:block">
           <Flex className="list-none lg:gap-8 md:gap-3">
-            <Navlinks />
+            <NavLinks />
           </Flex>
         </div>
         <div className=" flex items-center">
